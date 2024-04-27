@@ -5,7 +5,7 @@ const os = require("os");
 
 const foldername = "dev" + Date.now();
 
-var Path = path.join(os.homedir(),"One Drive","Desktop");
+var Path = path.join(os.homedir(),"OneDrive","Desktop");
 const cssplate = `*{
     margin: 0;
     padding: 0;
@@ -29,4 +29,9 @@ const cssplate = `*{
     </html>`
 
     fs.mkdirSync(path.join(Path,foldername));
+    fs.writeFileSync(path.join(path.join(Path,foldername),"index.html"),htmlplate);
+    fs.writeFileSync(path.join(path.join(Path,foldername),"style.css"),cssplate);
+    fs.writeFileSync(path.join(path.join(Path,foldername),"script.js"),"//start code");
+
+
     console.log("ban");
